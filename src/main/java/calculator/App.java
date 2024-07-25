@@ -17,5 +17,10 @@ public class App {
 
         System.out.println("num1, num2 ="+ num1 + "," + num2);
 
+        System.out.println("사칙연산 기호를 입력하세요: ");
+        char operator =sc.next().charAt(0);
+
+        System.out.println("operator = " + operator);
+
     }
 }
