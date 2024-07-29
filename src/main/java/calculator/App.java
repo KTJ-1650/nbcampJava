@@ -8,6 +8,9 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
+        int[] saveResult = new int[10];
+        int count = 1;
+
         while (true){
             System.out.print("첫 번째 숫자를 입력하세요: ");
             int num1 = sc.nextInt();
@@ -44,16 +47,31 @@ public class App {
 
                     break;
             }
-                System.out.println("결과 : "+ result);
+            System.out.println("결과 : " + result);
 
 
-                System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
-                String endCal = sc.next();
-                if(endCal.equalsIgnoreCase("exit")){
-                    System.out.println("종료하겠습니다");
-                    break;
-                }
+            if (count <= 10){
+                saveResult[count] = result;
+                System.out.println("결과 :" + saveResult[count] + " 카운트 갯수:" + count);
 
+                count++;
+
+            }
+
+
+
+
+
+
+
+
+
+            System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
+            String endCal = sc.next();
+            if(endCal.equalsIgnoreCase("exit")){
+                System.out.println("종료하겠습니다");
+                break;
+            }
         }
     }
 }
