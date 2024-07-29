@@ -59,15 +59,28 @@ public class App {
             2.가장 먼저 저장된 연산결과를 삭제하시겠습니까?라는 sout을 넣는다.
             3.sc코드를 넣는다 -> remove를 치면 20이 삭제가 되게한다
             *
+
+            8. “**inquiry”라는 문자열이 입력되면 저장된 연산 결과 전부를 출력합니다.**
+                - foreach(향상된 for문)을 활용하여 구현 해봅니다.
             * */
+
+
+
             saveResult.add(result);
-            System.out.println("가장 먼저 저장된 연산결과를 삭제하시겠습니까?");
+            System.out.println("remove(삭제)/inquiry(출력)/계속 진행할려면 아무거나 입력");
             String moveString = sc.next();
             if(moveString.equalsIgnoreCase("remove")){
                 saveResult.remove();
+            } else if (moveString.equalsIgnoreCase("inquiry")) {
+                System.out.println("저장된 연산 결과 ");
+                for(int res : saveResult){
+                    System.out.println(res);
+                }
             }
 
             System.out.println(saveResult.size());
+
+
 
 
 
