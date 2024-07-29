@@ -1,5 +1,7 @@
 package calculator;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class App {
@@ -8,7 +10,9 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
-        int[] saveResult = new int[10];
+        //int[] saveResult = new int[10];
+        Queue<Integer> saveResult = new LinkedList<>();
+
         int count = 1;
 
         while (true){
@@ -50,21 +54,33 @@ public class App {
             System.out.println("결과 : " + result);
 
 
-            if (count <= 10){
-                saveResult[count] = result;
-                System.out.println("결과 :" + saveResult[count] + " 카운트 갯수:" + count);
+            /*
 
-                count++;
+            1.saveResult = 연산된 값을 저장하는 저장소(num1+num2 =result =>saveResult)
+            * result:계산 값
+            * saveResult 안에는 result가 들어가 있음
+            * saveResult는 10개의 값만 가지고 있음
+            *
+            * 1.saveResult의 값이 10이 넘는지 안넘는지 체크한다.
+            * 2.값이 넘으면 가장 오래된 값을 제거한다.
+            * 3.새로운 값을 넣는다.
+            *
+            * 넘지않으면
+            * 1.새로운 값을 넣는다.
 
+            * */
+
+
+
+            if(saveResult.size() >=2){
+                saveResult.poll();
+                saveResult.add(result);
+
+            }else {
+                saveResult.add(result);
             }
 
-
-
-
-
-
-
-
+            System.out.println(saveResult.size());
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String endCal = sc.next();
