@@ -55,32 +55,27 @@ public class App {
 
 
             /*
-
-            1.saveResult = 연산된 값을 저장하는 저장소(num1+num2 =result =>saveResult)
-            * result:계산 값
-            * saveResult 안에는 result가 들어가 있음
-            * saveResult는 10개의 값만 가지고 있음
+            1.saveResult에 result값을 넣는다 (20,40,60)
+            2.가장 먼저 저장된 연산결과를 삭제하시겠습니까?라는 sout을 넣는다.
+            3.sc코드를 넣는다 -> remove를 치면 20이 삭제가 되게한다
             *
-            * 1.saveResult의 값이 10이 넘는지 안넘는지 체크한다.
-            * 2.값이 넘으면 가장 오래된 값을 제거한다.
-            * 3.새로운 값을 넣는다.
-            *
-            * 넘지않으면
-            * 1.새로운 값을 넣는다.
-
             * */
-
-
-
-            if(saveResult.size() >=2){
-                saveResult.poll();
-                saveResult.add(result);
-
-            }else {
-                saveResult.add(result);
+            saveResult.add(result);
+            System.out.println("가장 먼저 저장된 연산결과를 삭제하시겠습니까?");
+            String moveString = sc.next();
+            if(moveString.equalsIgnoreCase("remove")){
+                saveResult.remove();
             }
 
             System.out.println(saveResult.size());
+
+
+
+
+
+
+
+
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String endCal = sc.next();
